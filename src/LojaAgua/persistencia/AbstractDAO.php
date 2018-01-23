@@ -6,7 +6,7 @@
 
     class AbstractDAO{
 
-        private $entityManager;
+        public $entityManager;
         private $entityPath;
 
         public function __construct($entityPath){
@@ -44,7 +44,7 @@
             $this->entityManager->merge($user);
             $this->entityManager->flush();
         }
-        public function delete($id){            
+        public function delete($user){            
             $this->entityManager->remove($user);
             $this->entityManager->flush();
         }

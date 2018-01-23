@@ -20,7 +20,7 @@
          */
         private $hora;
         /**
-         * @ManyToOne(targetEntity="Usuario",cascade={"persist"})
+         * @ManyToOne(targetEntity="Usuario")
          * @JoinColumn(name="usuario_id", referencedColumnName="id")
          */
         private $usuario;
