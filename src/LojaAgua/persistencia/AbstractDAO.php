@@ -11,7 +11,7 @@
 
         public function __construct($entityPath){
             
-            $this->$entityPath = $entityPath;
+            $this->entityPath = $entityPath;
             $this->entityManager = $this->createEntityManager();
         }
 
@@ -49,7 +49,7 @@
             $this->entityManager->flush();
         }
         public function findById($id){
-                return $entityManager->find('LojaAgua\entidades\Usuario' ,1);
+                return $this->entityManager->find($this->entityPath,$id);
         }
         public function findAll(){
             $collection = $this->entityManager->getRepository($this->entityPath)->findAll();

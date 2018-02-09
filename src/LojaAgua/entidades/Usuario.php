@@ -1,11 +1,13 @@
 <?php
 
      namespace LojaAgua\entidades;
+     use LojaAgua\entidades\Entidade;
+
      /**
       * @Entity
       *@Table(name="usuario")
       */
-     class Usuario{
+     class Usuario extends Entidade{
         /**
         *@var integer @Id
         *@Column(name="id", type="integer")
@@ -111,6 +113,13 @@
         
          return "  [id:" .$this->id. "]  [email:" .$this->email. "]  [endereco:" .$this->endereco. "]  [senha:" .$this->senha. "]  " ;
         }
+
+        public function toArray(){
+                return [
+               "id"=>$this->id,
+                "email"=>$this->email,
+                "enderco"=>$this->endereco];
+              }
         
         }    
 
